@@ -1,0 +1,32 @@
+/* ============================================
+   CSS VARIABLES & BASE STYLES
+   ============================================ */
+
+:root {
+    --primary-color: #3e2870;
+    --secondary-color: #6d3860;
+    --mid-gradient: #564870;
+    --dark-bg: #2e3141;
+    --light-bg: #f7f7f7;
+    --streaming-dark: #141414;
+    --streaming-darker: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+section {
+    padding: 80px 0;
+}

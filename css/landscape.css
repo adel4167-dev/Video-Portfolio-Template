@@ -1,0 +1,328 @@
+/* ============================================
+   MOBILE & TABLET LANDSCAPE ORIENTATION LAYOUT
+   ============================================ */
+
+@media (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
+    /* Force body layout */
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+    
+    body {
+        display: block !important;
+        position: relative;
+        min-width: 100vw;
+    }
+    
+    /* Combined hero wrapper - spans full viewport */
+    section#banner.hero-section,
+    section#one.section-special {
+        position: relative !important;
+        height: 75vh !important;
+        min-height: 75vh !important;
+        max-height: 75vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        float: left !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        border: none !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Hero section - left side (50% width) */
+    section#banner.hero-section {
+        width: 50% !important;
+        z-index: 10 !important;
+        background: transparent !important;
+    }
+    
+    section#banner .banner-image {
+        display: none !important;
+    }
+    
+    section#banner::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background-image: url('../images/banner.webp') !important;
+        background-size: 200% auto !important;
+        background-position: 0% center !important;
+        z-index: 1 !important;
+    }
+    
+    /* Fallback for browsers without WebP support */
+    @supports not (background-image: url('../images/banner.webp')) {
+        section#banner::before {
+            background-image: url('../images/banner.jpg') !important;
+        }
+    }
+    
+    section#banner::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(to right, 
+            rgba(62, 40, 112, 0.1) 0%,
+            rgba(62, 40, 112, 0.25) 100%) !important;
+        z-index: 2 !important;
+    }
+    
+    section#banner .container {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+        max-width: calc(50vw - 40px) !important;
+        padding: 15px 30px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    section#banner h1 {
+        font-size: 1.65rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.3 !important;
+        color: white !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        padding: 0 5px !important;
+    }
+    
+    section#banner h2 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0 !important;
+        line-height: 1.2 !important;
+        color: white !important;
+        white-space: normal !important;
+    }
+    
+    /* About section - right side (50% width) with same banner background */
+    section#one.section-special {
+        width: 50% !important;
+        z-index: 10 !important;
+        background: transparent !important;
+        clear: none !important;
+        border-left: none !important;
+    }
+    
+    /* Add banner image to about section background */
+    section#one.section-special::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background-image: url('../images/banner.webp') !important;
+        background-size: 200% auto !important;
+        background-position: 100% center !important;
+        z-index: 1 !important;
+    }
+    
+    /* Fallback for browsers without WebP support */
+    @supports not (background-image: url('../images/banner.webp')) {
+        section#one.section-special::before {
+            background-image: url('../images/banner.jpg') !important;
+        }
+    }
+    
+    section#one.section-special::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(to right, 
+            rgba(62, 40, 112, 0.25) 0%,
+            rgba(86, 48, 104, 0.35) 50%,
+            rgba(109, 56, 96, 0.45) 100%) !important;
+        z-index: 2 !important;
+    }
+    
+    section#one .container {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        color: white !important;
+    }
+    
+    section#one h2.display-5 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.5rem !important;
+        color: white !important;
+    }
+    
+    section#one .lead {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.4rem !important;
+        color: white !important;
+    }
+    
+    section#one p:not(.lead) {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+        color: white !important;
+    }
+    
+    section#one .social-icons {
+        gap: 5px !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    section#one .social-icons a {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: white !important;
+        border: 2px solid white !important;
+    }
+    
+    section#one .social-icons a:hover {
+        background: white !important;
+        color: var(--primary-color) !important;
+    }
+    
+    /* Wrapper for floating sections to prevent white bars */
+    body::after {
+        content: '' !important;
+        display: table !important;
+        clear: both !important;
+    }
+    
+    /* Clear float after combined hero section */
+    section#two.section-dark {
+        clear: both !important;
+        display: block !important;
+        position: relative !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 12px 15px !important;
+        float: none !important;
+        min-height: 50px !important;
+        z-index: 5 !important;
+    }
+    
+    section#two h2 {
+        font-size: 1rem !important;
+    }
+    
+    section#two i {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Rest of content flows normally full width */
+    section#three.streaming-section,
+    section#four.section-special,
+    footer {
+        clear: both !important;
+        display: block !important;
+        position: relative !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    section#three.streaming-section {
+        padding: 30px 15px !important;
+    }
+    
+    section#four.section-special {
+        padding: 30px 15px !important;
+        min-height: auto !important;
+    }
+    
+    footer {
+        padding: 8px 15px 4px !important;
+    }
+    
+    /* Sticky header spans full width above everything */
+    .sticky-header {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+    }
+    
+    /* VIDEO MODAL - Fix close button accessibility in landscape */
+    .video-modal {
+        padding: 10px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .modal-content {
+        max-height: 90vh !important;
+        max-width: 95vw !important;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow: hidden !important;
+    }
+    
+    .modal-video-container {
+        flex: 0 0 60% !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .modal-player {
+        padding-bottom: 56.25% !important;
+        width: 100% !important;
+    }
+    
+    .modal-info {
+        flex: 1 !important;
+        padding: 20px !important;
+        overflow-y: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    
+    .modal-info h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .modal-info p {
+        font-size: 0.9rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .modal-close {
+        top: 10px !important;
+        right: 10px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.4rem !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        color: #000 !important;
+        border: 2px solid #000 !important;
+        z-index: 2001 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+    }
+    
+    .modal-close:hover {
+        background: #000 !important;
+        color: #fff !important;
+        transform: rotate(90deg) !important;
+    }
+}

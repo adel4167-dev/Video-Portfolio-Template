@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site - Editing Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .doc-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .doc-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .doc-nav h5 {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-nav a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: #666;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .doc-nav a:hover {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            padding-left: 1rem;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-card h2 {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .section-card h3 {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .visual-example {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .file-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .file-badge i {
+            margin-right: 0.5rem;
+        }
+        
+        .code-location {
+            background: #2d2d2d;
+            color: #f8f9fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.25rem 0;
+        }
+        
+        pre[class*="language-"] {
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .tip-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box i {
+            color: #2196F3;
+            margin-right: 0.5rem;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box i {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+        
+        .example-element {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50px;
+            margin: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .example-element:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .config-table {
+            width: 100%;
+            margin: 1rem 0;
+        }
+        
+        .config-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem;
+        }
+        
+        .config-table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .config-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        @media print {
+            .doc-nav { display: none; }
+            .section-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="doc-header">
+        <div class="container">
+            <h1><i class="fas fa-book"></i> Portfolio Site - Editing Guide</h1>
+            <p class="lead mb-0">A comprehensive guide to editing and customizing your portfolio website</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Navigation Sidebar -->
+            <div class="col-lg-3">
+                <div class="doc-nav">
+                    <h5><i class="fas fa-list"></i> Contents</h5>
+                    <a href="#overview">Overview</a>
+                    <a href="#header">Sticky Header</a>
+                    <a href="#banner">Hero Banner</a>
+                    <a href="#about">About Section</a>
+                    <a href="#categories">Video Categories</a>
+                    <a href="#videos">Video Portfolio</a>
+                    <a href="#modal">Video Modal</a>
+                    <a href="#styles">Styling</a>
+                    <a href="#config">Configuration</a>
+                    <a href="#scripts">JavaScript Files</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+
+                <!-- OVERVIEW -->
+                <div class="section-card" id="overview">
+                    <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                    <p>This guide explains where to find and edit key elements of your portfolio site. Each section includes:</p>
+                    <ul>
+                        <li><strong>Visual Example</strong> - What the element looks like</li>
+                        <li><strong>File Location</strong> - Which file contains the code</li>
+                        <li><strong>Code Snippet</strong> - The actual code to edit</li>
+                        <li><strong>Tips</strong> - Helpful information for customization</li>
+                    </ul>
+
+                    <h3>File Structure</h3>
+                    <pre><code class="language-plaintext">Portfolio Site/
+├── index.html              (Main page)
+├── index-test.html         (Test page with categories)
+├── css/
+│   ├── base.css           (Core styles)
+│   ├── components.css     (UI components)
+│   ├── animations.css     (Animations)
+│   ├── responsive.css     (Mobile responsive)
+│   └── landscape.css      (Landscape orientation)
+├── js/
+│   ├── config.js          (Site configuration)
+│   ├── header.js          (Sticky header)
+│   ├── video-modal.js     (Video modal popup)
+│   ├── video-effects.js   (Video hover effects)
+│   ├── video-categories.js (NEW - Category filtering)
+│   └── gallery.js         (Photo gallery)
+└── images/
+    └── (banner images)</code></pre>
+                </div>
+
+                <!-- STICKY HEADER -->
+                <div class="section-card" id="header">
+                    <h2><i class="fas fa-window-maximize"></i> Sticky Header</h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 1rem; margin-top: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h5 style="margin: 0; font-size: 1.2rem;">James Nolan-Neylan</h5>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Sydney-Based Filmmaker</p>
+                                </div>
+                                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                                    <i class="fab fa-facebook-messenger"></i>
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-linkedin"></i>
+                                    <i class="fab fa-vimeo-v"></i>
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index.html</span>
+                    <span class="code-location">Lines 24-58</span>
+
+                    <h3>Edit Your Name & Title</h3>
+                    <pre><code class="language-html">&lt;div class="header-info"&gt;
+    &lt;h1&gt;James Nolan-Neylan&lt;/h1&gt;
+    &lt;h2&gt;Sydney-Based Filmmaker&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h3>Edit Social Media Links</h3>
+                    <pre><code class="language-html">&lt;div class="social-icons"&gt;
+    &lt;a href="https://m.me/nneylan" title="Messenger"&gt;
+        &lt;i class="fab fa-facebook-messenger"&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href="https://www.instagram.com/nolanneylan/" title="Instagram"&gt;
+        &lt;i class="fab fa-instagram"&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;!-- Add more social links here --&gt;
+&lt;/div&gt;</code></pre>
+
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Tip:</strong> The header appears automatically after scrolling down 300px. Change this in <code>js/config.js</code> by editing <code>header.showThreshold</code>.
+                    </div>
+                </div>
+
+                <!-- HERO BANNER -->
+                <div class="section-card" id="banner">
+                    <h2><i class="fas fa-image"></i> Hero Banner</h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1200x400/667eea/ffffff?text=Hero+Banner'); background-size: cover; color: white; padding: 3rem; text-align: center; margin-top: 1rem; border-radius: 8px;">
+                            <h1 style="font-size: 2.5rem; margin: 0;">James Nolan-Neylan</h1>
+                            <h2 style="font-size: 1.5rem; margin: 0.5rem 0 0 0;">Sydney-Based Filmmaker</h2>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index.html</span>
+                    <span class="code-location">Lines 60-72</span>
+
+                    <h3>Replace Banner Image</h3>
+                    <pre><code class="language-html">&lt;section id="banner" class="hero-section"&gt;
+    &lt;picture&gt;
+        &lt;source srcset="images/banner.webp" type="image/webp"&gt;
+        &lt;img src="images/banner.jpg" alt="Banner" class="banner-image"&gt;
+    &lt;/picture&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;James Nolan-Neylan&lt;/h1&gt;
+        &lt;h2&gt;Sydney-Based Filmmaker&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Tip:</strong> Place your banner images in the <code>images/</code> folder. Use WebP format for better performance.
+                    </div>
+                </div>
+
+                <!-- ABOUT SECTION -->
+                <div class="section-card" id="about">
+                    <h2><i class="fas fa-user"></i> About Section</h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="text-align: center; padding: 2rem; background: white; border-radius: 8px; margin-top: 1rem;">
+                            <h3 style="color: #667eea;">Open to freelance work<br>and creative collaboration</h3>
+                            <p>I'm driven by stories that are unique, compelling, and reflect the diverse spectrum of human life.</p>
+                            <p style="font-size: 0.95rem; color: #666;">My work centers on camera operation and editing...</p>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index.html</span>
+                    <span class="code-location">Lines 74-103</span>
+
+                    <h3>Edit About Text</h3>
+                    <pre><code class="language-html">&lt;section id="one" class="section-special"&gt;
+    &lt;div class="container text-center"&gt;
+        &lt;h2 class="display-5 fw-bold mb-3"&gt;
+            Open to freelance work&lt;br&gt;and creative collaboration
+        &lt;/h2&gt;
+        &lt;p class="lead mb-2"&gt;
+            I'm driven by stories that are unique, compelling...
+        &lt;/p&gt;
+        &lt;p class="lead mb-3"&gt;
+            My work centers on camera operation and editing...
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                </div>
+
+                <!-- VIDEO CATEGORIES (NEW) -->
+                <div class="section-card" id="categories">
+                    <h2><i class="fas fa-filter"></i> Video Categories <span class="badge bg-success">NEW</span></h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; text-align: center;">
+                            <span class="example-element">All (8)</span>
+                            <span class="example-element" style="opacity: 0.7;">Narrative (1)</span>
+                            <span class="example-element" style="opacity: 0.7;">Documentary (1)</span>
+                            <span class="example-element" style="opacity: 0.7;">Commercial (1)</span>
+                            <span class="example-element" style="opacity: 0.7;">Music Video (1)</span>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index-test.html</span>
+                    <span class="code-location">Lines 200-225</span>
+
+                    <h3>Add/Edit Categories</h3>
+                    <pre><code class="language-html">&lt;div class="category-filter"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="category-buttons"&gt;
+            &lt;button class="category-btn active" data-category="all"&gt;
+                All &lt;span class="count"&gt;(8)&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class="category-btn" data-category="narrative"&gt;
+                Narrative &lt;span class="count"&gt;(1)&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;!-- Add more categories here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h3>Assign Categories to Videos</h3>
+                    <pre><code class="language-html">&lt;div class="video-card" 
+     data-video-id="758554514" 
+     data-title="I'm Glad You're Here"
+     data-categories="narrative drama"&gt;
+    &lt;!-- Video content --&gt;
+&lt;/div&gt;</code></pre>
+
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Tip:</strong> Videos can have multiple categories! Separate them with spaces: <code>data-categories="narrative experimental drama"</code>
+                    </div>
+
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Important:</strong> The category filtering is in <code>index-test.html</code>. To use it on your main site, copy the category filter section and include <code>js/video-categories.js</code> in <code>index.html</code>.
+                    </div>
+
+                    <h3>Customize Category Styles</h3>
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index-test.html</span>
+                    <span class="code-location">Lines 23-105 (in &lt;style&gt; section)</span>
+
+                    <pre><code class="language-css">.category-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 50px;
+    /* Customize colors, padding, etc. */
+}
+
+.category-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Active button style */
+}</code></pre>
+                </div>
+
+                <!-- VIDEO PORTFOLIO -->
+                <div class="section-card" id="videos">
+                    <h2><i class="fas fa-video"></i> Video Portfolio</h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div style="position: relative; background: #333; border-radius: 8px; overflow: hidden; aspect-ratio: 16/9;">
+                                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); color: white;">
+                                    <i class="fas fa-play" style="font-size: 2rem;"></i>
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
+                                    <div style="font-size: 0.9rem; font-weight: bold;">Video Title</div>
+                                </div>
+                            </div>
+                            <div style="position: relative; background: #333; border-radius: 8px; overflow: hidden; aspect-ratio: 16/9;">
+                                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); color: white;">
+                                    <i class="fas fa-play" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> index.html / index-test.html</span>
+                    <span class="code-location">Lines 227-350 (approximate)</span>
+
+                    <h3>Add a New Video</h3>
+                    <pre><code class="language-html">&lt;div class="video-card" 
+     data-video-id="YOUR_VIMEO_ID" 
+     data-title="Your Video Title" 
+     data-credits="Director: Your Name" 
+     data-description="Video description here"
+     data-categories="narrative documentary"&gt;
+    
+    &lt;img src="https://vumbnail.com/YOUR_VIMEO_ID.jpg" alt="Video Title"&gt;
+    
+    &lt;div class="video-card-overlay"&gt;
+        &lt;h4&gt;Your Video Title&lt;/h4&gt;
+        &lt;p class="card-credits"&gt;Director: Your Name&lt;/p&gt;
+        &lt;button class="btn-play-small"&gt;
+            &lt;i class="fas fa-play"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Getting Your Vimeo ID:</strong> Your Vimeo URL looks like <code>https://vimeo.com/758554514</code> - the ID is <code>758554514</code>. The thumbnail URL is automatically generated: <code>https://vumbnail.com/YOUR_ID.jpg</code>
+                    </div>
+
+                    <h3>Remove a Video</h3>
+                    <p>Simply delete the entire <code>&lt;div class="video-card"&gt;...&lt;/div&gt;</code> block for that video.</p>
+
+                    <h3>Reorder Videos</h3>
+                    <p>Cut and paste entire video card blocks to change their order in the grid.</p>
+                </div>
+
+                <!-- VIDEO MODAL -->
+                <div class="section-card" id="modal">
+                    <h2><i class="fas fa-play-circle"></i> Video Modal (Popup)</h2>
+                    
+                    <div class="visual-example">
+                        <strong>Visual Example:</strong>
+                        <div style="background: rgba(0,0,0,0.9); padding: 2rem; border-radius: 8px; margin-top: 1rem; color: white;">
+                            <div style="text-align: right; margin-bottom: 1rem;">
+                                <i class="fas fa-times" style="font-size: 1.5rem; cursor: pointer;"></i>
+                            </div>
+                            <div style="background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 1rem;">
+                                <i class="fas fa-video" style="font-size: 3rem; opacity: 0.5;"></i>
+                            </div>
+                            <h3>Video Title</h3>
+                            <p style="margin: 0; font-size: 0.9rem;"><strong>Director: James Nolan-Neylan</strong></p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Video description appears here...</p>
+                        </div>
+                    </div>
+
+                    <span class="file-badge"><i class="fas fa-file-code"></i> js/video-modal.js</span>
+
+                    <h3>Customize Vimeo Player Settings</h3>
+                    <span class="file-badge"><i class="fas fa-file-code"></i> js/config.js</span>
+                    <span class="code-location">Lines 35-37</span>
+
+                    <pre><code class="language-javascript">// Video modal
+modal: {
+    vimeoParams: 'autoplay=1&badge=0&autopause=0'
+}</code></pre>
+
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Available Vimeo Parameters:</strong>
+                        <ul style="margin-top: 0.5rem;">
+                            <li><code>autoplay=1</code> - Start playing automatically</li>
+                            <li><code>badge=0</code> - Hide Vimeo badge</li>
+                            <li><code>autopause=0</code> - Don't auto-pause when switching tabs</li>
+                            <li><code>loop=1</code> - Loop the video</li>
+                            <li><code>muted=1</code> - Start muted</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- STYLING -->
+                <div class="section-card" id="styles">
+                    <h2><i class="fas fa-palette"></i> Styling & Colors</h2>
+
+                    <h3>Main Colors</h3>
+                    <span class="file-badge"><i class="fas fa-file-code"></i> css/base.css</span>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="background: #667eea; height: 80px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                            <code>#667eea</code><br>
+                            <small>Primary Purple</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="background: #764ba2; height: 80px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                            <code>#764ba2</code><br>
+                            <small>Secondary Purple</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="background: #1a1a1a; height: 80px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                            <code>#1a1a1a</code><br>
+                            <small>Dark Background</small>
+                        </div>
+                    </div>
+
+                    <h3>Change Site Colors</h3>
+                    <p>Search for these hex codes in your CSS files and replace with your preferred colors:</p>
+                    <pre><code class="language-css">/* Primary gradient colors */
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+/* Dark sections */
+background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);</code></pre>
+
+                    <h3>CSS File Organization</h3>
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>File</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>base.css</code></td>
+                                <td>Core styles, typography, colors, basic layout</td>
+                            </tr>
+                            <tr>
+                                <td><code>components.css</code></td>
+                                <td>UI components (header, cards, buttons, modal)</td>
+                            </tr>
+                            <tr>
+                                <td><code>animations.css</code></td>
+                                <td>Animation effects and transitions</td>
+                            </tr>
+                            <tr>
+                                <td><code>responsive.css</code></td>
+                                <td>Mobile and tablet responsive styles</td>
+                            </tr>
+                            <tr>
+                                <td><code>landscape.css</code></td>
+                                <td>Landscape orientation adjustments</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- CONFIGURATION -->
+                <div class="section-card" id="config">
+                    <h2><i class="fas fa-cog"></i> Site Configuration</h2>
+                    
+                    <span class="file-badge"><i class="fas fa-file-code"></i> js/config.js</span>
+
+                    <p>The <code>config.js</code> file contains all major behavioral settings in one place:</p>
+
+                    <h3>All Configuration Options</h3>
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>Setting</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>header.showThreshold</code></td>
+                                <td>300</td>
+                                <td>Scroll position (px) to show sticky header</td>
+                            </tr>
+                            <tr>
+                                <td><code>header.socialIconsOffset</code></td>
+                                <td>150</td>
+                                <td>Offset from bottom of about section (px)</td>
+                            </tr>
+                            <tr>
+                                <td><code>gallery.autoScrollSpeed</code></td>
+                                <td>0.8</td>
+                                <td>Auto-scroll speed for photo gallery</td>
+                            </tr>
+                            <tr>
+                                <td><code>videoEffects.horizontalScale</code></td>
+                                <td>0.98</td>
+                                <td>Scale for adjacent video cards on hover</td>
+                            </tr>
+                            <tr>
+                                <td><code>videoEffects.horizontalOpacity</code></td>
+                                <td>0.85</td>
+                                <td>Opacity for adjacent video cards on hover</td>
+                            </tr>
+                            <tr>
+                                <td><code>modal.vimeoParams</code></td>
+                                <td>autoplay=1...</td>
+                                <td>Vimeo embed parameters</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Example: Change When Header Appears</h3>
+                    <pre><code class="language-javascript">header: {
+    showThreshold: 500,  // Change from 300 to 500
+    socialIconsOffset: 150
+}</code></pre>
+                </div>
+
+                <!-- JAVASCRIPT FILES -->
+                <div class="section-card" id="scripts">
+                    <h2><i class="fas fa-code"></i> JavaScript Files</h2>
+
+                    <h3>Script Organization</h3>
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>File</th>
+                                <th>Purpose</th>
+                                <th>Key Functions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>config.js</code></td>
+                                <td>Central configuration</td>
+                                <td>All site settings</td>
+                            </tr>
+                            <tr>
+                                <td><code>header.js</code></td>
+                                <td>Sticky header behavior</td>
+                                <td>Show/hide header on scroll</td>
+                            </tr>
+                            <tr>
+                                <td><code>video-modal.js</code></td>
+                                <td>Video popup</td>
+                                <td>Open/close modal, embed video</td>
+                            </tr>
+                            <tr>
+                                <td><code>video-effects.js</code></td>
+                                <td>Video card hover effects</td>
+                                <td>Scale/fade adjacent cards</td>
+                            </tr>
+                            <tr>
+                                <td><code>video-categories.js</code></td>
+                                <td><span class="badge bg-success">NEW</span> Category filtering</td>
+                                <td>Filter videos by category</td>
+                            </tr>
+                            <tr>
+                                <td><code>gallery.js</code></td>
+                                <td>Photo gallery</td>
+                                <td>Auto-scroll, navigation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Important:</strong> Scripts must be loaded in order! <code>config.js</code> should always load first, as other scripts depend on it.
+                    </div>
+
+                    <h3>Script Loading Order (in HTML)</h3>
+                    <pre><code class="language-html">&lt;!-- External libraries first --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Config must load before other custom scripts --&gt;
+&lt;script src="js/config.js"&gt;&lt;/script&gt;
+
+&lt;!-- Then other scripts (order doesn't matter for these) --&gt;
+&lt;script src="js/header.js"&gt;&lt;/script&gt;
+&lt;script src="js/video-effects.js"&gt;&lt;/script&gt;
+&lt;script src="js/video-modal.js"&gt;&lt;/script&gt;
+&lt;script src="js/video-categories.js"&gt;&lt;/script&gt; &lt;!-- NEW --&gt;</code></pre>
+                </div>
+
+                <!-- QUICK REFERENCE -->
+                <div class="section-card">
+                    <h2><i class="fas fa-bolt"></i> Quick Reference</h2>
+                    
+                    <h3>Common Edits</h3>
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>What to Change</th>
+                                <th>File</th>
+                                <th>Search For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Your name</td>
+                                <td>index.html</td>
+                                <td>"James Nolan-Neylan"</td>
+                            </tr>
+                            <tr>
+                                <td>Your title</td>
+                                <td>index.html</td>
+                                <td>"Sydney-Based Filmmaker"</td>
+                            </tr>
+                            <tr>
+                                <td>Social media links</td>
+                                <td>index.html</td>
+                                <td>class="social-icons"</td>
+                            </tr>
+                            <tr>
+                                <td>About text</td>
+                                <td>index.html</td>
+                                <td>id="one"</td>
+                            </tr>
+                            <tr>
+                                <td>Add video</td>
+                                <td>index.html</td>
+                                <td>class="video-grid"</td>
+                            </tr>
+                            <tr>
+                                <td>Add category</td>
+                                <td>index-test.html</td>
+                                <td>class="category-buttons"</td>
+                            </tr>
+                            <tr>
+                                <td>Change colors</td>
+                                <td>css/base.css</td>
+                                <td>#667eea or #764ba2</td>
+                            </tr>
+                            <tr>
+                                <td>Scroll behavior</td>
+                                <td>js/config.js</td>
+                                <td>header.showThreshold</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Testing Your Changes</h3>
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Tip:</strong> Clear your browser cache (Ctrl+Shift+R or Cmd+Shift+R) to see changes immediately. CSS and JS files have version parameters (<code>?v=202602061450</code>) that can be updated to force reload.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark); color: white; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container text-center">
+            <p style="margin: 0;">
+                <i class="fas fa-book"></i> Portfolio Site Documentation
+            </p>
+            <p style="margin: 0.5rem 0 0 0; opacity: 0.7; font-size: 0.9rem;">
+                Last Updated: February 6, 2026
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.doc-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Update active link
+                    document.querySelectorAll('.doc-nav a').forEach(a => a.style.borderLeftColor = 'transparent');
+                    this.style.borderLeftColor = 'var(--primary)';
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section-card');
+            const navLinks = document.querySelectorAll('.doc-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.borderLeftColor = 'transparent';
+                link.style.paddingLeft = '0.75rem';
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.style.borderLeftColor = 'var(--primary)';
+                    link.style.paddingLeft = '1rem';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*~
+
+# Log Files
+*.log
+
+# Build/Distribution Files
+dist/
+build/
+
+# Optional: Uncomment if you don't want to include images in git
+# images/
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.webp
+
+# Optional: Node modules (if you add npm in future)
+# node_modules/
+# package-lock.json

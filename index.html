@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Your Name - Your Title</title>
+    
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/base.css?v=202602061450">
+    <link rel="stylesheet" href="css/animations.css?v=202602061450">
+    <link rel="stylesheet" href="css/components.css?v=202602061450">
+    <link rel="stylesheet" href="css/responsive.css?v=202602061450">
+    <link rel="stylesheet" href="css/landscape.css?v=202602061450">
+</head>
+<body>
+
+    <!-- ============================================
+         STICKY HEADER
+         ============================================ -->
+    <header class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-info">
+                <h1>Your Name</h1>
+                <h2>Your Title</h2>
+            </div>
+            <div class="header-social">
+                <p>Connect with me:</p>
+                <div class="social-icons">
+                    <a href="https://m.me/yourusername" title="Messenger" aria-label="Messenger">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourusername/" title="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yourname/" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://vimeo.com/yourusername" title="Vimeo" aria-label="Vimeo">
+                        <i class="fab fa-vimeo-v"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" title="Email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO BANNER
+         ============================================ -->
+    <section id="banner" class="hero-section">
+        <picture>
+            <source srcset="images/banner.webp" type="image/webp">
+            <img src="images/banner.jpg" alt="Portfolio Banner" class="banner-image">
+        </picture>
+        <div class="container">
+            <h1>Your Name</h1>
+            <h2>Your Title</h2>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section id="one" class="section-special">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-3">Open to freelance work<br>and creative collaboration</h2>
+            <p class="lead mb-2">I'm driven by creating unique, compelling content that resonates with audiences.</p>
+            <p class="lead mb-3">My work focuses on visual storytelling and creative production. I bring experience in multiple aspects of video production.</p>
+            
+            <p class="mb-4">Connect with me:</p>
+            <div class="social-icons">
+                <a href="https://m.me/yourusername" title="Messenger" aria-label="Messenger">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="https://www.instagram.com/yourusername/" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yourname/" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://vimeo.com/yourusername" title="Vimeo" aria-label="Vimeo">
+                    <i class="fab fa-vimeo-v"></i>
+                </a>
+                <a href="mailto:your.email@example.com" title="Email" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         VIEW WORK SECTION
+         ============================================ -->
+    <section id="two" class="section-dark text-center">
+        <div class="container">
+            <a href="#three" class="text-white text-decoration-none d-flex align-items-center justify-content-center gap-4">
+                <i class="fas fa-chevron-down fs-3 bounce-arrow" style="transform: rotate(90deg);"></i>
+                <h2 class="display-6 mb-0">View my latest work</h2>
+                <i class="fas fa-chevron-down fs-3 bounce-arrow" style="transform: rotate(-90deg);"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         VIDEO PORTFOLIO - STREAMING SECTION
+         ============================================ -->
+    <section id="three" class="streaming-section">
+        <div class="container-fluid">
+            
+            <!-- Video Grid -->
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card" 
+                     data-video-id="123456789" 
+                     data-title="Sample Project Title" 
+                     data-credits="Director: Your Name" 
+                     data-description="This is a sample project description. Replace with your actual video details and Vimeo ID.">
+                    <img src="https://vumbnail.com/123456789.jpg" alt="Sample Project Title">
+                    <div class="video-card-overlay">
+                        <h4>Sample Project Title</h4>
+                        <p class="card-credits">Director: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card" 
+                     data-video-id="234567890" 
+                     data-title="Commercial Project" 
+                     data-credits="Camera: Your Name" 
+                     data-description="A sample commercial project. Replace with your actual project details.">
+                    <img src="https://vumbnail.com/234567890.jpg" alt="Commercial Project">
+                    <div class="video-card-overlay">
+                        <h4>Commercial Project</h4>
+                        <p class="card-credits">Camera: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card" 
+                     data-video-id="345678901" 
+                     data-title="Promotional Video" 
+                     data-credits="Editor: Your Name" 
+                     data-description="A promotional video project example.">
+                    <img src="https://vumbnail.com/345678901.jpg" alt="Promotional Video">
+                    <div class="video-card-overlay">
+                        <h4>Promotional Video</h4>
+                        <p class="card-credits">Editor: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 4 -->
+                <div class="video-card" 
+                     data-video-id="456789012" 
+                     data-title="Documentary Short" 
+                     data-credits="Director and Camera: Your Name" 
+                     data-description="A sample documentary project. Replace with your actual content.">
+                    <img src="https://vumbnail.com/456789012.jpg" alt="Documentary Short">
+                    <div class="video-card-overlay">
+                        <h4>Documentary Short</h4>
+                        <p class="card-credits">Director and Camera: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 5 -->
+                <div class="video-card" 
+                     data-video-id="567890123" 
+                     data-title="Music Video" 
+                     data-credits="Editor: Your Name" 
+                     data-description="A sample music video project.">
+                    <img src="https://vumbnail.com/567890123.jpg" alt="Music Video">
+                    <div class="video-card-overlay">
+                        <h4>Music Video</h4>
+                        <p class="card-credits">Editor: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 6 -->
+                <div class="video-card" 
+                     data-video-id="678901234" 
+                     data-title="Experimental Video" 
+                     data-credits="Editor: Your Name" 
+                     data-description="An experimental video project showcasing creative techniques.">
+                    <img src="https://vumbnail.com/678901234.jpg" alt="Experimental Video">
+                    <div class="video-card-overlay">
+                        <h4>Experimental Video</h4>
+                        <p class="card-credits">Editor: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 7 -->
+                <div class="video-card" 
+                     data-video-id="789012345" 
+                     data-title="Mood Piece" 
+                     data-credits="Editor: Your Name" 
+                     data-description="A mood-driven video piece exploring visual storytelling.">
+                    <img src="https://vumbnail.com/789012345.jpg" alt="Mood Piece">
+                    <div class="video-card-overlay">
+                        <h4>Mood Piece</h4>
+                        <p class="card-credits">Editor: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Video Card 8 -->
+                <div class="video-card" 
+                     data-video-id="890123456" 
+                     data-title="Motion Graphics Project" 
+                     data-credits="Editor: Your Name" 
+                     data-description="An animated motion graphics sequence.">
+                    <img src="https://vumbnail.com/890123456.jpg" alt="Motion Graphics Project">
+                    <div class="video-card-overlay">
+                        <h4>Motion Graphics Project</h4>
+                        <p class="card-credits">Editor: Your Name</p>
+                        <button class="btn-play-small"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         VIDEO MODAL
+         ============================================ -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-video-container">
+                <div id="modalPlayer" class="modal-player"></div>
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalCredits"></p>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PHOTOGRAPHY SECTION
+        ============================================ -->
+    <section id="four" class="section-special text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-2">Photography</h2>
+            <p class="lead mb-4">Explore my photography portfolio</p>
+        </div>
+        
+        <div class="photo-gallery-container">
+            <button class="gallery-nav-btn left" id="galleryPrev" aria-label="Previous photos">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="photo-gallery" id="photoGallery">
+                <a href="https://www.behance.net/gallery/135319517/Great-Keppel-Island" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/5d0db2135319517.61e5f51320f13.png" alt="Great Keppel Island">
+                    <div class="photo-overlay">
+                        <h5>Great Keppel Island</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/135319373/Sunrise-Over-Sydney" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/3dd89b135319373.61e5f4332ec8e.png" alt="Sunrise Over Sydney">
+                    <div class="photo-overlay">
+                        <h5>Sunrise Over Sydney</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/115334069/Sunrise-on-a-misty-morning" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/ec2e4f115334069.Y3JvcCwxOTYzLDE1MzYsNDMsMA.jpg" alt="Sunrise on a misty morning">
+                    <div class="photo-overlay">
+                        <h5>Sunrise on a misty morning</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/104311849/Sydney-Streets" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/31034f104311849.Y3JvcCw0NDE4LDM0NTYsMzgyLDA.jpg" alt="Sydney Streets">
+                    <div class="photo-overlay">
+                        <h5>Sydney Streets</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/104311537/Portraits" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/f6f1c3104311537.Y3JvcCwxMjAwLDkzOCwwLDMyOQ.jpg" alt="Portraits">
+                    <div class="photo-overlay">
+                        <h5>Portraits</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/104311329/Nature" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/34e76e104311329.Y3JvcCwxOTUzLDE1MjgsNDgsMA.jpg" alt="Nature">
+                    <div class="photo-overlay">
+                        <h5>Nature</h5>
+                    </div>
+                </a>
+                
+                <a href="https://www.behance.net/gallery/104311167/Architecture" target="_blank" class="photo-item" rel="noopener noreferrer">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/cb0e11104311167.Y3JvcCw0MDI0LDMxNDgsMzQ4LDA.jpg" alt="Architecture">
+                    <div class="photo-overlay">
+                        <h5>Architecture</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="gallery-nav-btn right" id="galleryNext" aria-label="Next photos">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="container text-center">
+            <a href="https://www.behance.net/jdnn" target="_blank" class="btn-behance" rel="noopener noreferrer">
+                <i class="fab fa-behance"></i>
+                <span>View Full Portfolio on Behance</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container text-center">
+            <div class="copyright">
+                <p class="mb-0">&copy; 2026 James Nolan-Neylan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         EXTERNAL SCRIPTS
+         ============================================ -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ============================================
+         CUSTOM JAVASCRIPT MODULES
+         ============================================ -->
+    <script src="js/config.js?v=202602061430"></script>
+    <script src="js/header.js?v=202602061430"></script>
+    <script src="js/video-modal.js?v=202602061430"></script>
+    <script src="js/video-effects.js?v=202602061430"></script>
+    <script src="js/gallery.js?v=202602061430"></script>
+    
+</body>
+</html>
